@@ -194,7 +194,13 @@
             </div>
             <div v-if="answered" class="material">
               <h3>{{ currentQuestion.material.title }}</h3>
-              <img :src="'image/' + (currentQuestion.absoluteIndex + 1) + '.png'" class="material-image" />
+                <template v-if="currentQuestion.absoluteIndex === 46">
+                  <img src="image/47.png" class="material-image" />
+                  <img src="image/47(2).png" class="material-image" />
+                </template>
+                <template v-else>
+                  <img :src="'image/' + (currentQuestion.absoluteIndex + 1) + '.png'" class="material-image" />
+                </template>
               <p v-html="currentQuestion.material.content"></p>
             </div>
           </div>
